@@ -1,11 +1,10 @@
 const { parentPort, workerData } = require("worker_threads");
 
 const mappedData = workerData.map((line) => {
-    const [modelo, velocidade, quantidade] = line.split(",");
+    const [modelo, velocidade] = line.split(",");
     return {
         modelo: modelo.trim(),
-        velocidade: parseFloat(velocidade),
-        quantidade: parseInt(quantidade),
+        velocidade: parseFloat(velocidade)
     };
 });
 
